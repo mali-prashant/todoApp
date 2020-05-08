@@ -6,7 +6,7 @@ from sqlalchemy.orm.exc import NoResultFound
 
 log = logging.getLogger(__name__)
 
-api = Api(version='1.0', title='PMO Portal API',
+api = Api(version='1.0', title='TODO API',
           description='A demonstration of a PMO portal API')
 
 
