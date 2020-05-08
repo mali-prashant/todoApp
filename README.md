@@ -46,7 +46,7 @@ Reactjs(16.9.0)
         Using PG admin you can check table & their records.
 
   
-Runs the app in the development mode.<br>
+Runs the app in the running mode.<br>
 
 For React -
 http://localhost:3000

@@ -6,6 +6,9 @@ import CreateTodo from "./components/create-todo.component";
 import EditTodo from "./components/edit-todo.component";
 import TodosList from "./components/todos-list.component";
 import DeleteTodo from './components/delete-todo.component';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+
 
 import logo from "./logo.svg";
 
@@ -14,23 +17,26 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
+        <Navbar bg="dark" variant="dark">
+        <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
               <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
             </a>
-            <Link to="/" className="navbar-brand">TODO task</Link>
+        <Navbar.Brand>
+          TODO APP
+        </Navbar.Brand>
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">Todos</Link>
+                  <Link to="/" className="nav-link">TodosList</Link>
                 </li>
                
               </ul>
             </div>
             <div className="navbar-item">
-                  <Link to="/create" className="nav-link">Add Todo</Link>
+                  <Link to="/create" className="nav-link"><Button variant="primary">Add</Button>{' '}</Link>
             </div>
-          </nav>
+      </Navbar>
+
           <br/>
           <Route path="/" exact component={TodosList} />
           <Route path="/edit/:id" component={EditTodo} />

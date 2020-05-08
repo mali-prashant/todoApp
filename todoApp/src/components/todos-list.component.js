@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Table from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button'
+import TableFilter from 'react-table-filter';
+
 
 const Todo = props => (
     <tr>
@@ -8,10 +12,10 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.description}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.priority}</td>
         <td>
-            <Link to={"/edit/"+props.todo.id}>Edit</Link>
+            <Link to={"/edit/"+props.todo.id}><Button variant="primary">Edit</Button>{' '}</Link>
         </td>
         <td>
-            <Link to={"/delete/"+props.todo.id}>Delete</Link>
+            <Link to={"/delete/"+props.todo.id}><Button variant="danger">Delete</Button></Link>
             
         </td>
     </tr>
@@ -46,7 +50,7 @@ export default class TodosList extends Component {
         return (
             <div>
                 <h3>Todos List</h3>
-                <table className="table table-striped" style={{ marginTop: 20 }} >
+                {/* <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                         <tr>
                             <th>Summary</th>
@@ -58,8 +62,22 @@ export default class TodosList extends Component {
                     <tbody>
                         { this.todoList() }
                     </tbody>
-                </table>
-            </div>
+                </table> */}
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Summary</th>
+                            <th>Description</th>
+                            <th>Priority</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.todoList() }
+                    </tbody>
+                    </Table>
+                </div>
         )
     }
 }

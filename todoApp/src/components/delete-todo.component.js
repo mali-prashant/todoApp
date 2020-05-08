@@ -17,11 +17,11 @@ export default class DeleteTodo extends Component {
                 if (willDelete) {
                     axios.delete('http://localhost:9200/api/todos/'+this.props.match.params.id)
                     .then(res => console.log(res.data));
-                  swal("Poof! Your imaginary file has been deleted!", {
+                  swal("Poof! Your task has been deleted!", {
                     icon: "success",
                   });
                 } else {
-                  swal("Your imaginary file is safe!");
+                  swal("Your task is safe!");
                 }
                 this.props.history.push('/todolist')
               });

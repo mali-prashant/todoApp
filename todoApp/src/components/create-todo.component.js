@@ -54,11 +54,11 @@ export default class CreateTodo extends Component {    constructor(props) {
             due_date: '',
             priority: ''
         })
-        alert("Record successfully inserted..")
-        this.props.history.push('/');
-        //swal("Good job!", "Record inserted successfully!", "success");
-       
-    }    render() {
+        swal("Good job!", "You clicked the button!", "success");
+        this.props.history.push('/todolist');
+    }    
+    
+    render() {
         return (
             <div style={{marginTop: 10}}>
                 <h3>Create Todo App</h3>
